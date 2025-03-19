@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>My Articles</h1>
+        <h1>All articles here</h1>
     </div>
 </template>
   

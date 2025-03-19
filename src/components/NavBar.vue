@@ -4,6 +4,7 @@
 		        <!-- list item -->
             <li><router-link to="/">Browse</router-link></li>
             <li><router-link to="/home">Home</router-link></li>
+            <li><router-link to="/self">Self</router-link></li>
         </ul>
     </nav>
 </template>
