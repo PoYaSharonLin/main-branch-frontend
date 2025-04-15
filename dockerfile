@@ -1,21 +1,10 @@
-# Use the official Node.js image from Docker Hub
-FROM node:latest
+FROM python:3.10
+WORKDIR /code
 
-# Set the working directory inside the container
-WORKDIR /app
+COPY ./requirements.txt /code/requirements.txt
 
-# Copy package.json and package-lock.json to container
-COPY package*.json ./
+RUN pip install --upgrade pip
+RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
 
-# # Copy all to container (don't need if mounted volume)
-# COPY . .
-
-# Install project dependencies (package.json)
-RUN npm install
-
-# Expose port 8080
-EXPOSE 8080
-
-# Run server (when container starts)
-CMD ["npm", "run", "serve"]
-# Note that the "serve" refers to the "scripts" self-defined in package.json
+WORKDIR /code/app
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000", "--reload"]

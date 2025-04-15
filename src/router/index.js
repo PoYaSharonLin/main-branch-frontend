@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from 'vue-router';
 import Browse from '../views/Browse.vue';
 import Home from '../views/Home.vue';
 import Self from '../views/Self.vue';
+import ArticleList from '../views/ArticleList.vue';
 
 // Define routes
 const routes = [
@@ -19,6 +20,11 @@ const routes = [
         path: '/self',     // URL path (i.e., http://localhost/home)
         name: 'Self',      // Route name
         component: Self    // Maps the route to the component
+    },
+    {
+        path: '/articlelist',     // URL path (i.e., http://localhost/articles)
+        name: 'ArticleList',      // Route name
+        component: ArticleList    // Maps the route to the component
     }
 ];
 
